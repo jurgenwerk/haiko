@@ -9,7 +9,7 @@ module.exports = function(environment) {
     EmberENV: {
       FEATURES: {
         'ember-htmlbars': true
-      }
+      },
     },
 
     APP: {
@@ -40,6 +40,16 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
 
+  }
+
+  ENV.contentSecurityPolicy = {
+    'default-src': "'none'",
+    'script-src': "'self' https://cdn.mxpnl.com", // Allow scripts from https://cdn.mxpnl.com
+    'font-src': "'self' https://maxcdn.bootstrapcdn.com", // Allow fonts to be loaded from http://fonts.gstatic.com
+    'connect-src': "'self' https://api.mixpanel.com http://custom-api.local", // Allow data (ajax/websocket) from api.mixpanel.com and custom-api.local
+    'img-src': "'self'",
+    'style-src': "'self' 'unsafe-inline' https://maxcdn.bootstrapcdn.com", // Allow inline styles and loaded CSS from http://fonts.googleapis.com
+    'media-src': "'self'"
   }
 
   return ENV;

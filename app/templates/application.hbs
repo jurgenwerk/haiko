@@ -1,23 +1,11 @@
 <h2 id="title">Haiko</h2>
 
 {{#each line in lines}}
-  {{#draggable-object content=line}}
-    {{line.line}}
-  {{/draggable-object}}
+  {{line.line}}
 {{/each}}
 
 <h3>Haiku area:</h3>
 
-{{#draggable-object-target action="addLine" row="1"}}
-  - {{model.line1}} <br>
-{{/draggable-object-target}}
 
-{{#draggable-object-target action="addLine" row="2"}}
-  - {{model.line2}} <br>
-{{/draggable-object-target}}
-
-{{#draggable-object-target action="addLine" row="3"}}
-  - {{model.line3}}
-{{/draggable-object-target}}
 
 {{outlet}}
