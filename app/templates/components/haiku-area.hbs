@@ -1,0 +1,10 @@
+<div class="haiku-area">
+  <div id='haiku_area' class='container'>
+    {{#each lines as |line|}}
+      <div>
+        {{line.line}}
+      </div>
+    {{/each}}
+  </div>
+</div>
+{{yield}}
